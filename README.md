@@ -1,6 +1,10 @@
-# Sistema-login
-sistema simples de login<br>
-<p>Como funciona?</p>
-- Tela de login com login e senha.<br>
-- Base de dados com usuários com senha criptografadas em RASH.<br>
-- Telas administrativas com controle de acesso.
+# Sistema-login sistema simples de login
+
+Como funciona?<br>
+<br>
+<strong>Tela de login</strong><br>
+- Acesso com Usuário e Senha.<br>
+<br>
+<strong>Banco de Dados</strong><br>
+- Cadastro de login via banco de dados Mysql.<br>
+- Criptografadas em RASH.

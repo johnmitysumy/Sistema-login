@@ -8,33 +8,29 @@ if($btnLogin){
 	$usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
 	$senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
 	//echo "$usuario - $senha";
-	if((!empty($usuario)) AND (!empty($senha))){
-		//Gerar a senha criptografa
-		//echo password_hash($senha, PASSWORD_DEFAULT);
-		//Pesquisar o usuário no BD
-		//$result_usuario = "SELECT id, nome, email,  senha FROM login WHERE usuario='$usuario' LIMIT 1";
-		$result_usuario = "SELECT * FROM login WHERE usuario = '$usuario' LIMIT 1";
+	if((!empty($usuario)) AND (!empty($senha))){		
+		$result_usuario = "SELECT * FROM login WHERE status = 'ATIVO' AND usuario = '$usuario' LIMIT 1";
 		$resultado_usuario = mysqli_query($conn, $result_usuario);
 		if($resultado_usuario){
 			$row_usuario = mysqli_fetch_assoc($resultado_usuario);
 			if(password_verify($senha, $row_usuario['senha'])){
 				$_SESSION['id'] = $row_usuario['id'];
 				$_SESSION['nome'] = $row_usuario['nome'];
-				$_SESSION['nivel'] = $row_usuario['nivel'];				
-				$_SESSION['usuario'] = $row_usuario['usuario'];				
-				$_SESSION['regiao'] = $row_usuario['regiao'];				
 				$_SESSION['email'] = $row_usuario['email'];
+				$_SESSION['nivel'] = $row_usuario['nivel'];
+				$_SESSION['id_area'] = $row_usuario['id_area'];
+				$_SESSION['usuario'] = $row_usuario['usuario'];				
 				header("Location: administrativo");
 			}else{
-				$_SESSION['msg'] = "<center>Login e senha incorreto!</center>";
-				header("Location: login.php");
+				$_SESSION['msg'] = "Login e senha incorreto!";
+				header("Location: /app/login");
 			}
 		}
 	}else{
-		$_SESSION['msg'] = "<center>Login e senha incorreto!</center>";
-		header("Location: login.php");
+		$_SESSION['msg'] = "Login e senha incorreto!";
+		header("Location: /app/login");
 	}
 }else{
-	$_SESSION['msg'] = "<center>Página não encontrada</center>";
-	header("Location: login.php");
+	$_SESSION['msg'] = "Página não encontrada";
+	header("Location: /app/login");
 }

@@ -1,12 +1,6 @@
 <?php
 session_start();
 ?>
-<?php
-			if(isset($_SESSION['msg'])){
-				echo $_SESSION['msg'];
-				unset($_SESSION['msg']);
-			}
-		?>
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -15,7 +9,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- PAGE settings -->
   <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
-  <title>ABSENTEÍSMO DETRAN</title>
+  <title>CONTROLE DE PROJETO</title>
   <meta name="description" content="RH NORD Administrativo - Sistema de Gestão de Pessoa.">
   <meta name="keywords" content="RH Nord Administrativo">
   <!-- CSS dependencies -->
@@ -31,24 +25,35 @@ session_start();
     <div class="container">
       <div class="row">
         <div class="col-lg-12 align-self-center text-lg-left text-center">
-          <h1 class="mb-0 mt-3 display-2">
-            <center><img  style="width: 150px;" src="style/img/login.png"></center><br>
+          <h1 class="mb-0 mt-5 display-4">
+          	<div align="center">
+          		CONTROLE DE PROJETO
+          	</div>
+            <br>
+
           </h1>
         </div>
       </div>
-		
-		<div class="row">
-        <div class="col-md-4">
+		<?php
+			if(isset($_SESSION['msg'])){
+				echo $_SESSION['msg'];
+				unset($_SESSION['msg']);
+			}
+		?>
+	
+        <div class="col-md" align="center">
 		<form method="POST" action="valida.php" style="">
-			<div class="form-group"> <input type="text" class="form-control" name="usuario" placeholder="Digite o seu usuário"> </div>			
+			<div class="form-group"> <input type="text" class="form-control" name="usuario" placeholder="Digite o seu usuário"> </div><BR>	
+			<div class="form-group">  <input type="password" class="form-control" name="senha" placeholder="Digite a sua senha"><br><br>	
+			<input type="submit" class="btn text-center text-capitalize text-info btn-primary btn-lg btn-block" name="btnLogin" value="Acessar">	
 			</div>
 			<div class="col-md-4">
-			<div class="form-group">  <input type="password" class="form-control" name="senha" placeholder="Digite a sua senha"><br><br> </div>
+			 </div>
 			</div>
 			<div class="col-md-4">
-			<input type="submit" class="btn text-center text-capitalize text-info btn-primary btn-lg btn-block" name="btnLogin" value="Acessar">
+			
 		</div>
-		</div>
+		
 		</div>
 		<br><br><br>
 		

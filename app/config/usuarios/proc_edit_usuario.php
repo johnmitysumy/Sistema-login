@@ -1,12 +1,24 @@
 <?php
+//INICIA A SESSÃO PHP
 session_start();
+
+/*VALIDAÇÃO SE O USUÁRIO TEM PERMISSÃO DE ESTÁ NA PÁGINA.*/
+if(!empty($_SESSION['nivel'] == "0" OR $_SESSION['nivel'] == '1' OR $_SESSION['nivel'] == '2' AND $_SESSION['id'])){
+	
+}else{
+	$_SESSION['msg'] = "Área restrita";
+	header("Location: /");	
+}
+//INCLUDE CONFIGURAÇÃO BANCO DE DADOS
 include_once("../../config/db/db-funcionarios.php");
 
+//VALORES FORMULÁRIO
 $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
 $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
 $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
 $status = filter_input(INPUT_POST, 'status', FILTER_SANITIZE_STRING);
+$nivel = filter_input(INPUT_POST, 'nivel', FILTER_SANITIZE_STRING);
 
 if ($_POST['senha'] > 0) {
 	$senha = password_hash( $_POST['senha'], PASSWORD_DEFAULT );
@@ -15,7 +27,8 @@ if ($_POST['senha'] > 0) {
 	email='$email', 
 	usuario='$usuario',
 	senha='$senha', 
-	status='$status'
+	status='$status',
+	nivel='$nivel'
 	WHERE id='$id'";
 }else{
 
@@ -23,7 +36,8 @@ if ($_POST['senha'] > 0) {
 nome='$nome', 
 email='$email', 
 usuario='$usuario', 
-status='$status'
+status='$status',
+nivel='$nivel'
 
 WHERE id='$id'";
 

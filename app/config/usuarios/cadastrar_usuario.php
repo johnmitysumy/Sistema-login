@@ -3,10 +3,10 @@
 session_start();
 
 /*VARIAVEL PARA DAR NOME A PÁGINA.*/
-$title_page = 'Administração - Editar Usuário';
+$title_page = 'Administração - Cadastrar Usuário';
 
 /*VALIDAÇÃO SE O USUÁRIO TEM PERMISSÃO DE ESTÁ NA PÁGINA.*/
-if(!empty($_SESSION['nivel'] == '2' AND $_SESSION['id'])){
+if(!empty($_SESSION['nivel'] == "0" OR $_SESSION['nivel'] == '1' OR $_SESSION['nivel'] == '2' AND $_SESSION['id'])){
 	
 }else{
 	$_SESSION['msg'] = "Área restrita";
@@ -43,67 +43,51 @@ include '../../config/db/db-funcionarios.php';
 if (isset($_SESSION['msg'])) {
 include '../../config/modal_padrao/index.php';
 }else{}
-
-	$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-	$result_usuario = "SELECT * FROM login WHERE id = $id";
-	$resultado_usuario = mysqli_query($conn, $result_usuario);
-	$row_usuario = mysqli_fetch_assoc($resultado_usuario);
 ?>
+<!-- BOTÃO VOLTAR-->
 <a href="/app/config/usuarios/"><button class="btn btn-info">VOLTAR</button></a>
+
 <!--NOME DO USUÁRIO QUE ESTÁ SENDO EDITAR -->
 <div align="center">
 	<h1>
-		<?php echo $row_usuario['nome']; ?>
+		Cadastrar Usuário
 	</h1>
 </div><br>
 
 <!-- INICIA O FORMULÁRIO-->
-<form method="POST" action="proc_edit_usuario.php">
+<form method="POST" action="proc_cad_usuario.php">
 
 <!-- NOME DO USUÁRIO -->
 <label><h2>Nome Usuário</h2></label>
-<input type="text" name="nome" value="<?php echo $row_usuario['nome']; ?>" class="form-control" required><br>
+<input type="text" name="nome" class="form-control" required><br>
 
 <!-- E-MAIL USUÁRIO -->
 <label><h2>E-mail Usuário</h2></label>
-<input type="text" name="email" value="<?php echo $row_usuario['email']; ?>" class="form-control"><br>
+<input type="text" name="email" class="form-control" required><br>
 
 <!-- E-MAIL USUÁRIO -->
 <label><h2>Usuário</h2></label>
-<input type="text" name="usuario" value="<?php echo $row_usuario['usuario']; ?>" class="form-control" required><br>
+<input type="text" name="usuario" class="form-control" required><br>
 
 <!-- STATUS USUÁRIO -->
 <label><h2>Status</h2></label>
-<select name="status" id="status" class="form-control">
-		<option value="<?php echo $row_usuario['status']; ?>" selected="selected"><?php echo $row_usuario['status']; ?></option>
+<select name="status" id="status" class="form-control" required><br>		
 		<option value="ATIVO">ATIVO</option>
 		<option value="INATIVO">INATIVO</option>			
 	</select>
 <bR>
 
-<!--NÍVEL USUÁRIO-->
-<label><h2>Nível Acesso</h2></label>
-<select name="nivel" id="nivel" class="form-control">
-	<option value="<?php echo $row_usuario['nivel']; ?>" selected="selected"><?php if ($row_usuario['nivel'] == '1') {
-			echo "USUÁRIO";
-		}else{echo "ADMIN";}  ?></option>
-		<option value="1">USUÁRIO</option>
-		<option value="2">ADMIN</option>			
-	</select>
-<br>
-
 <!-- SENHA USUÁRIO -->
 <label><h2>Senha</h2></label>
-<input type="password" name="senha" id="senha" class="form-control"><Br><br>
-
-<input type="hidden" name="id" value="<?php echo $row_usuario['id']; ?>">
+<input type="password" name="senha" id="senha" class="form-control" required><Br><br>
 
 <!-- BOTÃO PARA ENVIAR INFORMAÇÃO -->
-<input type="submit" class="form-control btn-primary" value="Atualizar Dados">
+<input type="submit" class="form-control btn-primary" value="Cadastrar Usuário">
 
 </form>
 <Br>
 <hr>
 <bR><BR>
+
 </body>
 </html>

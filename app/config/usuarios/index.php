@@ -3,11 +3,11 @@
 session_start();
 
 /*VALIDAÇÃO SE O USUÁRIO TEM PERMISSÃO DE ESTÁ NA PÁGINA.*/
-if(!empty($_SESSION['nivel'] == "0" OR $_SESSION['nivel'] == '1' OR $_SESSION['nivel'] == '2' AND $_SESSION['id'])){
+if(!empty($_SESSION['nivel'] == "2" AND $_SESSION['id'])){
 	
 }else{
 	$_SESSION['msg'] = "Área restrita";
-	header("Location: /");	
+	header("Location: /app/administrativo");	
 }
 
 /*VARIAVEL PARA DAR NOME A PÁGINA.*/
@@ -40,6 +40,9 @@ include '../modal_padrao/index.php';
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+<!-- BOTÃO CADASTRAR USUÁRIO-->
+<a href="cadastrar_usuario.php"><button class="btn btn-info">Cadastrar Usuário</button></a><br><br>
 
 <!-- CAMPO PARA REALIZAR BUSCA COM FILTRO DE STATUS-->
 <form method="POST">

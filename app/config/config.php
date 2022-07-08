@@ -6,11 +6,11 @@ session_start();
 $title_page = 'Administração - Configuração Sistema';
 
 /*VALIDAÇÃO SE O USUÁRIO TEM PERMISSÃO DE ESTÁ NA PÁGINA.*/
-if(!empty($_SESSION['nivel'] == "0" OR $_SESSION['nivel'] == '1' OR $_SESSION['nivel'] == '2' AND $_SESSION['id'])){
+if(!empty($_SESSION['nivel'] == '2' AND $_SESSION['id'])){
 	
 }else{
 	$_SESSION['msg'] = "Área restrita";
-	header("Location: /");	
+	header("Location: /app/administrativo");	
 }
 
 /*ADICIONA O MENU A TELA*/

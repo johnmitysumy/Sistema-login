@@ -40,10 +40,7 @@
                        
                         <li>
                             <a href="/app/config/usuarios">Usuários</a>
-                        </li>
-                        <li>
-                            <a href="/app/config/config.php">Sistema</a>
-                        </li>
+                        </li>                        
                     </ul>
                 </li>                
             </ul>

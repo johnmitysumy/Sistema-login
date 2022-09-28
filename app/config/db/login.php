@@ -2,7 +2,7 @@
 $servidor = "localhost:3306";
 $usuario = "root";
 $senha = "";
-$dbname = "solut002_controleprojeto";
+$dbname = "gestao_logistica";
 
 //Criar a conexao
 $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);

@@ -37,10 +37,7 @@
             <ul class="list-unstyled CTAs">
                 <li>
                     <a href="/app/sair" class="download">Sair do Sistema</a>
-                </li>
-                <li>
-                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
-                </li>
+                </li>                
             </ul>
         </nav>
 

@@ -10,6 +10,9 @@ if(!empty($_SESSION['nivel'] == "2" AND $_SESSION['id'])){
 	header("Location: /app/administrativo");	
 }
 
+//SHOW DO MENU CONFIGURAÇÃO
+$show_menu_confi = 'show';
+
 /*VARIAVEL PARA DAR NOME A PÁGINA.*/
 $title_page = 'Configurações - Listar Usuários';
 

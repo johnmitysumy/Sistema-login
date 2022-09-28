@@ -13,6 +13,9 @@ if(!empty($_SESSION['nivel'] == '2' AND $_SESSION['id'])){
 	header("Location: /");	
 }
 
+//SHOW DO MENU CONFIGURAÇÃO
+$show_menu_confi = 'show';
+
 /*ADICIONA O MENU A TELA*/
 include '../../menu/menu.php';
 

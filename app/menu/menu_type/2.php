@@ -36,7 +36,7 @@
                
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Configuração</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <ul class="collapse list-unstyled <?php if(isset($show_menu_confi)){echo $show_menu_confi;}else{} ?>" id="pageSubmenu">
                        
                         <li>
                             <a href="/app/config/usuarios">Usuários</a>

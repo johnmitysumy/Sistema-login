@@ -22,8 +22,8 @@
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
-            <div class="sidebar-header" style=" font-size: 25px;" align="center">
-                <a href="/app/administrativo">CONTROLE DE PROJETO</a><br>
+            <div class="sidebar-header" style=" font-size: 23px;" align="center">
+                <a href="/app/administrativo">SISTEMA DE LOGIN</a><br>
                 <font size="2px" style="background-color: #17a2b8; border-radius: 10px 20px; padding: 5px;"> <?php echo $_SESSION['nome'];?></font>
 
             </div>

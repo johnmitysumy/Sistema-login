@@ -17,7 +17,7 @@ $show_menu_confi = 'show';
 $title_page = 'Configurações - Listar Usuários';
 
 /*ADICIONA CONFIGURAÇÕES DO BANCO DE DADOS*/
-include_once("../../config/db/db-funcionarios.php");
+include_once("../../../../app/db/db.php");
 
 /*ADICIONA O MANU A PÁGINA*/
 include '../../menu/menu.php';

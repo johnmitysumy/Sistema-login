@@ -10,7 +10,7 @@ if(!empty($_SESSION['nivel'] == "0" OR $_SESSION['nivel'] == '1' OR $_SESSION['n
 	header("Location: /");	
 }
 //INCLUDE CONFIGURAÇÃO BANCO DE DADOS
-include_once("../../config/db/db-funcionarios.php");
+include_once("../../../../app/db/db.php");
 
 //VALORES FORMULÁRIO
 $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);

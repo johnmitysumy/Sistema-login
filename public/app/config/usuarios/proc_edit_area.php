@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../../config/db/db-funcionarios.php");
+include_once("../../../../app/db/db.php");
 
 /*VALIDAÇÃO SE O USUÁRIO TEM PERMISSÃO DE ESTÁ NA PÁGINA.*/
 if(!empty($_SESSION['nivel'] == "0" OR $_SESSION['nivel'] == '1' OR $_SESSION['nivel'] == '2' AND $_SESSION['id'])){

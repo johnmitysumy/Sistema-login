@@ -20,7 +20,7 @@ $show_menu_confi = 'show';
 include '../../menu/menu.php';
 
 /*ADICIONA O ARQUIVO DE CONFIGURAÇÃO DO BANCO DE DADOS*/
-include '../../config/db/db-funcionarios.php';
+include_once("../../../../app/db/db.php");
 
 ?>
 

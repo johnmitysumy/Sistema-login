@@ -32,9 +32,6 @@ if(!empty($_SESSION['nivel'] == "0" OR $_SESSION['nivel'] == '1' OR $_SESSION['n
   <br>
   <br>
 	<h1><?php echo "Olá ".$_SESSION['nome'].", Bem vindo!"; ?> </h1>
- 
-  
-  
   <br>
   <br>
   <br>

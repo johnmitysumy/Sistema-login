@@ -13,7 +13,7 @@ if(!empty($_SESSION['nivel'] == "0" OR $_SESSION['nivel'] == '1' OR $_SESSION['n
 ?>
 
 <?php
-	include 'menu/menu.php'
+	include '../app/menu/menu.php'
 	
 	?>
 	

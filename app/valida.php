@@ -1,7 +1,7 @@
 <?php
 session_start();
 //Incluindo a conexão com banco de dados
-include_once("../app/config/db/login.php");
+include_once("config/db/login.php");
 //O campo usuário e senha preenchido entra no if para validar
 $btnLogin = filter_input(INPUT_POST, 'btnLogin', FILTER_SANITIZE_STRING);
 if($btnLogin){

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../../../../app/db/db.php");
+include_once("../../../app/db/db.php");
 
 $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
@@ -18,7 +18,7 @@ while($row_usuario = mysqli_fetch_assoc($resultado_usuarios)){
 if ($valor_duplicado > '') {
 	$_SESSION['msg'] = "USUÁRIO JÁ CADASTRADO!";
 	$_SESSION['msg2'] = "<center>já existe um usuário com este nome de usuário cadastrado no sistema</center>";
-	header("Location: /app/config/usuarios/cadastrar_usuario.php");	
+	header("Location: /config/usuarios/cadastrar_usuario.php");	
 	}else{
 
 $result_usuario = "
@@ -31,10 +31,10 @@ $resultado_usuario = mysqli_query($conn, $result_usuario);
 if(mysqli_affected_rows($conn)){
 	$_SESSION['msg'] = "<p style='color:green;'>Usuário</p>"."$nome "."";
 	$_SESSION['msg2'] = "<center><p style='color:green;'>Cadastrado com sucesso</p><center>";
-	header("Location: /app/config/usuarios/cadastrar_usuario.php");
+	header("Location: /config/usuarios/cadastrar_usuario.php");
 }else{
 	$_SESSION['msg'] = "<p style='color:red;'>Erro!</p>";
 	$_SESSION['msg2'] = "<center><p style='color:red;'>Usuário ".$nome." não foi Cadastrado, Tente novamente.</p></center>";
-	header("Location: /app/config/usuarios/cadastrar_usuario.php");
+	header("Location: /config/usuarios/cadastrar_usuario.php");
 }
 }

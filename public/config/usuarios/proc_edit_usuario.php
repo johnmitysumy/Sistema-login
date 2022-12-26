@@ -10,7 +10,7 @@ if(!empty($_SESSION['nivel'] == "0" OR $_SESSION['nivel'] == '1' OR $_SESSION['n
 	header("Location: /");	
 }
 //INCLUDE CONFIGURAÇÃO BANCO DE DADOS
-include_once("../../../../app/db/db.php");
+include_once("../../../app/db/db.php");
 
 //VALORES FORMULÁRIO
 $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
@@ -50,9 +50,9 @@ $resultado_usuario = mysqli_query($conn, $result_usuario);
 if(mysqli_affected_rows($conn)){
 	$_SESSION['msg'] = "<p style='color:green;'>Usuário</p>"."$nome "."";
 	$_SESSION['msg2'] = "<center><p style='color:green;'>editado com sucesso</p><center>";
-	header("Location: /app/config/usuarios/edit_usuario.php?id=$id");
+	header("Location: /config/usuarios/edit_usuario.php?id=$id");
 }else{
 	$_SESSION['msg'] = "<p style='color:red;'>Erro!</p>";
 	$_SESSION['msg2'] = "<center><p style='color:red;'>Usuário ".$nome." não foi editado, Tente novamente.</p></center>";
-	header("Location: /app/config/usuarios/edit_usuario.php?id=$id");
+	header("Location: /config/usuarios/edit_usuario.php?id=$id");
 }

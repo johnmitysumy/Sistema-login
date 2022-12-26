@@ -7,7 +7,7 @@ if(!empty($_SESSION['nivel'] == "2" AND $_SESSION['id'])){
 	
 }else{
 	$_SESSION['msg'] = "Área restrita";
-	header("Location: /app/administrativo");	
+	header("Location: /administrativo");	
 }
 
 //SHOW DO MENU CONFIGURAÇÃO
@@ -17,7 +17,7 @@ $show_menu_confi = 'show';
 $title_page = 'Configurações - Listar Usuários';
 
 /*ADICIONA CONFIGURAÇÕES DO BANCO DE DADOS*/
-include_once("../../../../app/db/db.php");
+include_once("../../../app/db/db.php");
 
 /*ADICIONA O MANU A PÁGINA*/
 include '../../menu/menu.php';
@@ -99,7 +99,7 @@ $where_consulta = "WHERE status ".$valor_buscar."";
 <th style="vertical-align: middle; width: 50px;"><center><?php echo $row_usuario['usuario']; ?></center></th>
 <th style="vertical-align: middle; width: 50px;"><center><?php echo $row_usuario['status']; ?></center></th>
 <th style="vertical-align: middle; width: 50px;"><center>
-	<a href="edit_usuario.php?id=<?php echo $row_usuario['id']; ?>"><button  class="btn btn-warning"><img src="/app/icons/pen.svg"></button></a>
+	<a href="edit_usuario.php?id=<?php echo $row_usuario['id']; ?>"><button  class="btn btn-warning"><img src="/icons/pen.svg"></button></a>
 </center></th>
 </tr>
 <?php }?>

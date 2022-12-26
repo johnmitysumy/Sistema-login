@@ -3,7 +3,7 @@
 session_start();
 
 /*INCLUI O ARQUIVO DE CONFIGURAÇÃO DO BANCO DE DADOS*/
-include_once("../../../../app/db/db.php");
+include_once("../../../app/db/db.php");
 
 /*VALIDAÇÃO SE O USUÁRIO TEM PERMISSÃO DE ESTÁ NA PÁGINA.*/
 if(!empty($_SESSION['nivel'] == "0" OR $_SESSION['nivel'] == '1' OR $_SESSION['nivel'] == '2' AND $_SESSION['id'])){
@@ -27,9 +27,9 @@ $resultado_usuario = mysqli_query($conn, $result_usuario);
 if(mysqli_affected_rows($conn)){
 	$_SESSION['msg'] = "<p style='color:green;'>Permissão</p>"."";
 	$_SESSION['msg2'] = "<center><p style='color:green;'>Removida com Sucesso</p><center>";
-	header("Location: /app/config/usuarios/edit_usuario.php?id=$id_usuario");
+	header("Location: /config/usuarios/edit_usuario.php?id=$id_usuario");
 }else{
 	$_SESSION['msg'] = "<p style='color:red;'>Erro!</p>";
 	$_SESSION['msg2'] = "<center><p style='color:red;'>Permissão "." não foi removida, Tente novamente.</p></center>";
-	header("Location: /app/config/usuarios/edit_usuario.php?id=$id_usuario");
+	header("Location: /config/usuarios/edit_usuario.php?id=$id_usuario");
 }

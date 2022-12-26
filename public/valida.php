@@ -1,9 +1,11 @@
 <?php
 session_start();
 //Incluindo a conexão com banco de dados
-include_once("../../app/db/db.php");
+include_once("../app/db/db.php");
+
 //O campo usuário e senha preenchido entra no if para validar
 $btnLogin = filter_input(INPUT_POST, 'btnLogin', FILTER_SANITIZE_STRING);
+
 if($btnLogin){
 	$usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
 	$senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
@@ -21,16 +23,19 @@ if($btnLogin){
 				$_SESSION['id_area'] = $row_usuario['id_area'];
 				$_SESSION['usuario'] = $row_usuario['usuario'];				
 				header("Location: administrativo");
+			}elseif(!$row_usuario['nome']){
+				$_SESSION['msg'] = "Usuário Inativo!";
+				header("Location: /login");
 			}else{
 				$_SESSION['msg'] = "Login e senha incorreto!";
-				header("Location: /app/login");
+				header("Location: /login");
 			}
 		}
 	}else{
 		$_SESSION['msg'] = "Login e senha incorreto!";
-		header("Location: /app/login");
+		header("Location: /login");
 	}
 }else{
 	$_SESSION['msg'] = "Página não encontrada";
-	header("Location: /app/login");
+	header("Location: /login");
 }

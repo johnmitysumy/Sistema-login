@@ -20,7 +20,7 @@ $show_menu_confi = 'show';
 include '../../menu/menu.php';
 
 /*ADICIONA O ARQUIVO DE CONFIGURAÇÃO DO BANCO DE DADOS*/
-include_once("../../../../app/db/db.php");
+include_once("../../../app/db/db.php");
 
 ?>
 
@@ -52,7 +52,7 @@ include '../../config/modal_padrao/index.php';
 	$resultado_usuario = mysqli_query($conn, $result_usuario);
 	$row_usuario = mysqli_fetch_assoc($resultado_usuario);
 ?>
-<a href="/app/config/usuarios/"><button class="btn btn-info">VOLTAR</button></a>
+<a href="/config/usuarios/"><button class="btn btn-info">VOLTAR</button></a>
 <!--NOME DO USUÁRIO QUE ESTÁ SENDO EDITAR -->
 <div align="center">
 	<h1>

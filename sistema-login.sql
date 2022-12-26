@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05-Jul-2022 às 23:06
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 7.4.29
+-- Tempo de geração: 26-Dez-2022 às 20:17
+-- Versão do servidor: 10.4.25-MariaDB
+-- versão do PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `solut002_controleprojeto`
+-- Banco de dados: `sistema_login`
 --
 
 -- --------------------------------------------------------
@@ -61,9 +61,7 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`id`, `nome`, `email`, `nivel`, `usuario`, `status`, `senha`) VALUES
 (1, 'John Richard', 'john.richard@pvax.com.br', '2', 'john', 'ATIVO', '$2y$10$F0k/Cyxp1ZbQnh9MDjTSiOH9y6kYOjCTuu85v/s69uyuB.Tov7eey'),
-(11, 'Ana Paula Fernandes', 'anapaula.cga@pvax.com.br', '1', 'anapaula', 'INATIVO', '$2y$10$vHvqz3H7IZlrZk315Atqse90KfFbPLlNkgM014ADZBeDIkb.JUjmS'),
-(4, 'leonardo', 'leonardo@pvax.com.br', '1', 'leonardo', 'INATIVO', '$2y$10$KiZN33vt.uiIcPuxzV3dx.zNFXn0nAJAwdItaq37ltPSPvq.o4FIi'),
-(14, 'Leandro', 'leandro.fonseca@pvax.com.br', '2', 'leandro.fonseca', 'INATIVO', '$2y$10$Y9a/jhQa0xPFKXLMZTaFcuJzUIZELzT8iHPfmL7lB4Y7zYFnaJLNm');
+(15, 'xablauzin', 'xablauzin@gmail.com', '1', 'xabalauzin', 'ATIVO', '$2y$10$vcnvc2EyrVLpTVeuaQVzi.HRgXrN9jtdGK/ODFgQJFcxzWTpwO76u');
 
 --
 -- Índices para tabelas despejadas
@@ -95,7 +93,7 @@ ALTER TABLE `config`
 -- AUTO_INCREMENT de tabela `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
